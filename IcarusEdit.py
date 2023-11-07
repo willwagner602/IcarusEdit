@@ -336,7 +336,7 @@ class Talent(object):
 
 
 def get_max_talents() -> List[Talent]:
-    return [Talent({"RowName": talent, "Rank": rank}) for talent, rank in Talents.items()]
+    return [Talent({"RowName": talent, "Rank": rank}) for talent, rank in all_talents.items()]
 
 
 class Character(object):
