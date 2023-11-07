@@ -294,6 +294,36 @@ firearm_talents: Dict[str, int] = {
     "Firearm_No_Consume": 2,
     "Firearm_Second_Wind": 1,
 }
+solo_talents: Dict[str, int] = {
+    "Solo_Stamina": 2,
+    "Solo_Stamina_Regen": 2,
+    "Solo_Felling_Rewards": 2,
+    "Solo_Consumables": 2,
+    "Solo_Mining_Rewards": 2,
+    "Solo_Crafting_Basics": 1,
+    "Solo_Hunting_Resources_0": 2,
+    "Solo_Extra_Resources": 2,
+    "Solo_Hunting_Resources": 2,
+    "Solo_Weight_Capacity": 1,
+    "Exploration_Solo_Xp": 2,
+    "Solo_Resource_Weight": 1,
+    "Solo_Base_Maintenance": 1,
+    "Solo_Hedgehog_Damage": 1,
+    "Solo_Buildable_Weight": 2,
+    "Solo_Movement": 1,
+    "Solo_Damage_Reduction": 3,
+    "Solo_Sprain_Reduction": 3,
+    "Solo_Detection": 1,
+    "Solo_Health": 2,
+    "Solo_Melee_Damage": 2,
+    "Solo_Health_Regen": 2,
+    "Solo_Longer_Food_Buffs": 1,
+    "Solo_Knife_Damage": 2,
+    "Solo_Bow_Damage": 2,
+    "Solo_Firearm_Damage": 2,
+    "Solo_Spear_Damage": 2,
+    "Solo_Animal_Healthbar": 1,
+}
 
 all_talents: Dict[str, int] = {
     **resource_talents,
@@ -309,6 +339,7 @@ all_talents: Dict[str, int] = {
     **spear_talents,
     **knife_talents,
     **firearm_talents,
+    **solo_talents,
 }
 
 player_data_path: str = f"C:\\Users\\{os.getlogin()}\\AppData\\Local\\Icarus\\Saved\\PlayerData"
