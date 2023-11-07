@@ -7,7 +7,8 @@ import shutil
 import copy
 
 # all known talents formatted by name: max level
-Talents: Dict[str, int] = {
+
+resource_talents: Dict[str, int] = {
     "Resources_Increased_Wood": 3,
     "Gathering_Meat_Yield": 1,
     "Produce_Food_Decay": 3,
@@ -31,6 +32,8 @@ Talents: Dict[str, int] = {
     "Resources_Wood_Pickup": 1,
     "Resources_Instant_Tree": 1,
     "Exploration_Reduced_Tree_Damage": 1,
+}
+hunting_talents: Dict[str, int] = {
     "Stalking_Base_Stamina": 3,
     "Stalking_Sneak_Speed": 3,
     "Gathering_Bone_Yield": 1,
@@ -52,6 +55,8 @@ Talents: Dict[str, int] = {
     "Hunting_Cold_Hearted": 1,
     "Gathering_Polarbear_Recipe": 1,
     "Stalking_Large_Highlight": 1,
+}
+cooking_farming_talents: Dict[str, int] = {
     "Resources_Food_Hunger": 2,
     "Resources_Crop_Grow_Speed": 2,
     "Produce_Campfire_Fuel": 2,
@@ -73,6 +78,8 @@ Talents: Dict[str, int] = {
     "Resources_Crop_Decay": 1,
     "Resources_Food_Buff_Slot": 1,
     "Produce_CropPlot_Item_Spoil_Time": 2,
+}
+exploration_talents: Dict[str, int] = {
     "Exploration_Base_Health": 3,
     "Exploration_Base_Movement": 3,
     "Exploration_Storm_Regen": 3,
@@ -98,6 +105,8 @@ Talents: Dict[str, int] = {
     "Exploration_Arctic_Hero": 1,
     "Exploration_Desert_Hero": 1,
     "Exploration_Party_Xp": 1,
+}
+husbandry_talents: Dict[str, int] = {
     "Husbandry_TamingCosts": 2,
     "Husbandry_ForagingYield": 3,
     "Husbandry_SaddleCost": 2,
@@ -116,6 +125,8 @@ Talents: Dict[str, int] = {
     "Husbandry_TameHeatTolerance": 1,
     "Husbandry_TameColdTolerance": 1,
     "Husbandry_RidingExposureResist": 2,
+}
+fishing_talents: Dict[str, int] = {
     "Fishing_Rod_Crafting_Cost": 2,
     "Fishing_Golden_Zone_Size": 2,
     "Fishing_Minigame_Speed": 2,
@@ -134,6 +145,8 @@ Talents: Dict[str, int] = {
     "Fishing_Golden_Zone_Size_2": 3,
     "Fishing_Rare_Unique_Chance": 2,
     "Fishing_Uncommon_Chance": 2,
+}
+repair_talents: Dict[str, int] = {
     "Repair_Stamina_Regen": 3,
     "Repair_Hammer_Speed": 3,
     "Repair_Flapper_Movement": 1,
@@ -146,6 +159,8 @@ Talents: Dict[str, int] = {
     "Repair_Fire_Resistance": 1,
     "Repair_Throw_Flapper": 1,
     "Repair_Hammer_Speed_0": 2,
+}
+tool_talents: Dict[str, int] = {
     "Tools_Pickaxe_Durability": 3,
     "Tools_Cheaper_Pickaxe1_0": 1,
     "Tools_Axe_Crafting_0": 1,
@@ -168,6 +183,8 @@ Talents: Dict[str, int] = {
     "Tools_Pickaxe_Durability_0": 3,
     "Tools_Pickaxe_Stamina_Usage_0": 3,
     "Tools_Pickaxe_Free_Durability": 1,
+}
+building_talents: Dict[str, int] = {
     "Building_Wood_Cost_0": 2,
     "Building_Wood_Cost": 2,
     "Building_Wood_Health": 2,
@@ -189,6 +206,8 @@ Talents: Dict[str, int] = {
     "Building_Lightning_Rod_Health": 3,
     "Building_Hedgehog_Damage": 1,
     "Building_Storage_Increase_0": 2,
+}
+bow_talents: Dict[str, int] = {
     "Bow_Movement_Speed1": 3,
     "Bow_Craft_Master_0": 1,
     "Bow_Reduced_Stamina_Usage": 3,
@@ -210,6 +229,8 @@ Talents: Dict[str, int] = {
     "Bow_Critical_Multiplier2": 2,
     "Bow_Pinning_Shot": 1,
     "Bow_Homing_Arrow": 1,
+}
+spear_talents: Dict[str, int] = {
     "Spear_Melee_Damage1": 3,
     "Spear_Cheap_Crafting1_0": 1,
     "Spear_Stamina_Usage": 3,
@@ -230,6 +251,8 @@ Talents: Dict[str, int] = {
     "Spear_Cheap_Crafting2_0": 1,
     "Spear_Bleed_Hits": 3,
     "Spear_Range_Distance2": 2,
+}
+knife_talents: Dict[str, int] = {
     "Knife_Fast_Aim": 3,
     "Knife_Increased_Movement": 3,
     "Knife_Faster_Melee": 3,
@@ -251,6 +274,8 @@ Talents: Dict[str, int] = {
     "Knife_Instant_Kill": 1,
     "Knife_Pin_Throw": 1,
     "Knife_Range_Distance2": 3,
+}
+firearm_talents: Dict[str, int] = {
     "Firearm_Cheap_Pistol_Ammo": 1,
     "Firearm_Cheap_Shotgun_Ammo": 1,
     "Firearm_Cheap_Rifle_Ammo": 1,
@@ -269,6 +294,23 @@ Talents: Dict[str, int] = {
     "Firearm_No_Consume": 2,
     "Firearm_Second_Wind": 1,
 }
+
+all_talents: Dict[str, int] = {
+    **resource_talents,
+    **hunting_talents,
+    **cooking_farming_talents,
+    **exploration_talents,
+    **husbandry_talents,
+    **fishing_talents,
+    **repair_talents,
+    **tool_talents,
+    **building_talents,
+    **bow_talents,
+    **spear_talents,
+    **knife_talents,
+    **firearm_talents,
+}
+
 player_data_path: str = f"C:\\Users\\{os.getlogin()}\\AppData\\Local\\Icarus\\Saved\\PlayerData"
 
 
